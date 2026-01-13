@@ -4,6 +4,7 @@ import Register from "./pages/Register";
 import Gigs from "./pages/Gigs";
 import GigDetails from "./pages/GigDetails";
 import PostGig from "./pages/PostGig";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
   return (
@@ -11,9 +12,30 @@ function App() {
       <Route path="/" element={<Navigate to="/login" />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
-      <Route path="/gigs" element={<Gigs />} />
-      <Route path="/gigs/:id" element={<GigDetails />} />
-      <Route path="/post-gig" element={<PostGig />} />
+      <Route
+        path="/gigs/:id"
+        element={
+          <ProtectedRoute>
+            <GigDetails />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/gigs"
+        element={
+          <ProtectedRoute>
+            <Gigs />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/post-gig"
+        element={
+          <ProtectedRoute>
+            <PostGig />
+          </ProtectedRoute>
+        }
+      />
     </Routes>
   );
 }
