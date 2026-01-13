@@ -21,7 +21,7 @@ interface Bid {
   };
 }
 
-export default function GigDetails() {
+const GigDetails = () => {
   const { id } = useParams();
   const [gig, setGig] = useState<Gig | null>(null);
   const [loading, setLoading] = useState(true);
@@ -168,3 +168,5 @@ export default function GigDetails() {
     </div>
   );
 }
+
+export default GigDetails;

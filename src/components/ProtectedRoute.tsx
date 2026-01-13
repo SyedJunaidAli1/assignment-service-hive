@@ -1,12 +1,8 @@
 import { Navigate } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useState, ReactNode } from "react";
 import api from "../api/axios";
 
-export default function ProtectedRoute({
-  children,
-}: {
-  children: JSX.Element;
-}) {
+const ProtectedRoute = ({ children }: { children: ReactNode }) => {
   const [loading, setLoading] = useState(true);
   const [authorized, setAuthorized] = useState(false);
 
@@ -20,5 +16,7 @@ export default function ProtectedRoute({
 
   if (loading) return <div className="p-4">Loading...</div>;
 
-  return authorized ? children : <Navigate to="/login" />;
-}
+  return authorized ? <>{children}</> : <Navigate to="/login" />;
+};
+
+export default ProtectedRoute;

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import api from "../api/axios";
 
-export default function PostGig() {
+const PostGig = () => {
   const navigate = useNavigate();
 
   const [title, setTitle] = useState("");
@@ -73,3 +73,5 @@ export default function PostGig() {
     </div>
   );
 }
+
+export default PostGig;
