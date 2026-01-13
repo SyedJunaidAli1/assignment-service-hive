@@ -1,5 +1,6 @@
 import { Navigate } from "react-router-dom";
-import { useEffect, useState, ReactNode } from "react";
+import { useEffect, useState } from "react";
+import type { ReactNode } from "react";
 import api from "../api/axios";
 
 const ProtectedRoute = ({ children }: { children: ReactNode }) => {
