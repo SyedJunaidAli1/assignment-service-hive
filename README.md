@@ -1,4 +1,4 @@
-# 🖥️ Service Hive – Frontend
+# 🖥️ assignment-service-hive – Frontend
 
 Frontend for **Service Hive**, a gig marketplace where clients post gigs, freelancers bid on them, and clients hire one freelancer per gig.
 
